@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerguntasActivity">
+
+    <TextView
+        android:id="@+id/pergunta"
+        android:layout_width="246dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Quem descobriu o Brasil?"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="129dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="Quiz9"
+        android:visibility="visible"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_logo"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <RadioGroup
+        android:id="@+id/rgRespostas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnResponder"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pergunta"
+        app:layout_constraintVertical_bias="0.116">
+
+        <RadioButton
+            android:id="@+id/rbResposta1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pedro Álvares Cabral"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="15dp" />
+
+        <RadioButton
+            android:id="@+id/rbResposta2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cristóvão Colombo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="15dp" />
+
+        <RadioButton
+            android:id="@+id/rbResposta3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donald Trump"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="15dp" />
+
+        <RadioButton
+            android:id="@+id/rbResposta4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="prof. Luiz (LuizTools)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="15dp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnResponder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="btnResponderOnClick"
+        android:text="Responder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@android:color/holo_orange_light"
+        android:textColor="@android:color/black"/>
+</android.support.constraint.ConstraintLayout>

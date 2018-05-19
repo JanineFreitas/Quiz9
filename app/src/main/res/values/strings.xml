@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Quiz9</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="text_login_button">Entrar</string>
+    <string name="title_activity_perguntas">PerguntasActivity</string>
+    <string name="text_cadastrar_button">Cadastra-se</string>
+
+</resources>

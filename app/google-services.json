@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1818748625",
+    "firebase_url": "https://primeiroprojeto-45d13.firebaseio.com",
+    "project_id": "primeiroprojeto-45d13",
+    "storage_bucket": "primeiroprojeto-45d13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1818748625:android:bf2cda6753355f38",
+        "android_client_info": {
+          "package_name": "projeto.primeiro.com.br.primeiroprojeto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1818748625-sq01rp8q5poh1i7tuc2uoq9foffgc4b0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "projeto.primeiro.com.br.primeiroprojeto",
+            "certificate_hash": "eb0bcdfee72067ed1e4f07f28e1318ceb0f66f67"
+          }
+        },
+        {
+          "client_id": "1818748625-0kr465ehlnp8ho1gj6kveirr0ppnr2k4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG7YHUwSIsgs8KHbVtsXqyQZD1y2CcHhQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1818748625-0kr465ehlnp8ho1gj6kveirr0ppnr2k4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
