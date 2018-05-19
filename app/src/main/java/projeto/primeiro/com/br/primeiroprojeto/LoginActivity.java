@@ -44,8 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-
+                user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     Log.d("AUTH", "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
@@ -58,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        user = mAuth.getCurrentUser();
+        mAuth.addAuthStateListener(mAuthListener);
     }
 
     @Override
@@ -70,66 +69,76 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void btnLoginClick(View view) {
-        progressBar.setVisibility(View.VISIBLE);
-        Task<AuthResult> authResultTask = mAuth.signInWithEmailAndPassword(loginTextView.getText().toString(), senhaTextView.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Login com sucesso.", Toast.LENGTH_SHORT).show();
-                            user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Login com falha"+task.getException().toString(), Toast.LENGTH_SHORT).show();
+        if(regraEmailESenha()) {
+            progressBar.setVisibility(View.VISIBLE);
+            Task<AuthResult> authResultTask = mAuth.signInWithEmailAndPassword(loginTextView.getText().toString(), senhaTextView.getText().toString())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "Login com sucesso.", Toast.LENGTH_SHORT).show();
+                                updateUI(user);
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Login com falha" + task.getException().toString(), Toast.LENGTH_SHORT).show();
+                                updateUI(null);
+                            }
                         }
-                    }
-                });
-        progressBar.setVisibility(View.INVISIBLE);
+                    });
+            regraLogin();
+        }
 
-        //if(user!= null) {
-            Intent intent = new Intent(this, PerguntasActivity.class);
-            startActivity(intent);
-            finish();
-        //} else{
-        //    Toast.makeText(LoginActivity.this, "User null", Toast.LENGTH_SHORT).show();
-        //}
     }
 
     private void updateUI(FirebaseUser user) {
         this.user = user;
     }
 
+    private void regraLogin(){
+        if(user != null) {
+            Intent intent = new Intent(this, PerguntasActivity.class);
+            startActivity(intent);
+            finish();
+        } else{
+            Toast.makeText(LoginActivity.this, "Falha no Login", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private Boolean regraEmailESenha(){
+        Boolean isValido = true;
+        if (TextUtils.isEmpty(loginTextView.getText().toString())) {
+            loginTextView.setError("Digite o email");
+            isValido = false;
+        }
+
+        if (TextUtils.isEmpty(senhaTextView.getText().toString())) {
+            senhaTextView.setError("Digite a senha");
+            isValido = false;
+        }
+
+        if (senhaTextView.getText().toString().length() < 6) {
+            senhaTextView.setError("Senha não pode ter menos que 6 caracteres.");
+            isValido = false;
+        }
+        return isValido;
+    }
+
     public void btnCriarUsuario(View view) {
-        String email = loginTextView.getText().toString();
-        final String password = senhaTextView.getText().toString();
-
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Digite o email!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Digite a senha!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        progressBar.setVisibility(View.VISIBLE);
-
-        mAuth.createUserWithEmailAndPassword(loginTextView.getText().toString(), senhaTextView.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Usuário erro na criação", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-
+        if(regraEmailESenha()) {
+            progressBar.setVisibility(View.VISIBLE);
+            mAuth.createUserWithEmailAndPassword(loginTextView.getText().toString(), senhaTextView.getText().toString())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show();
+                                user = mAuth.getCurrentUser();
+                                updateUI(user);
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Usuário erro na criação", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+            regraLogin();
+        }
     }
 }
