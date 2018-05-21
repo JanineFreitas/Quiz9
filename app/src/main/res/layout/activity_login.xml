@@ -4,57 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ic_launcher_background"
     tools:context=".LoginActivity">
 
     <LinearLayout
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_gravity="center"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="356dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
+
         <ImageView
+            android:layout_width="186dp"
+            android:layout_height="137dp"
             android:layout_gravity="center|top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_logo"
-            />
+            android:src="@mipmap/ic_logo" />
+
         <EditText
             android:id="@+id/email"
-            android:inputType="textEmailAddress"
-            android:hint="@string/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColorLink="@android:color/holo_orange_light" />
+
         <EditText
             android:id="@+id/senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="@string/senha"
-            android:layout_width="match_parent"
             android:inputType="textPassword"
-            android:layout_height="wrap_content" />
+            android:textColorLink="@android:color/holo_orange_light" />
+
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:weightSum="2"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp">
+
             <Button
                 android:id="@+id/login_button"
-                android:text="@string/text_login_button"
+                android:layout_width="67dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:onClick="btnLoginClick"
                 android:layout_weight="0.5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+                android:background="@android:color/holo_orange_light"
+                android:onClick="btnLoginClick"
+                android:text="@string/text_login_button" />
 
             <Button
                 android:id="@+id/evaluate_button"
-                android:text="@string/text_cadastrar_button"
-                android:layout_gravity="center"
-                android:onClick="btnCriarUsuario"
-                android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="btnCriarUsuario"
+                android:background="@android:color/darker_gray"
+                android:text="@string/text_cadastrar_button" />
         </LinearLayout>
+
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="30dp"

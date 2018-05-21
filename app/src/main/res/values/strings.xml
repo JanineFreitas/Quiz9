@@ -5,5 +5,50 @@
     <string name="text_login_button">Entrar</string>
     <string name="title_activity_perguntas">PerguntasActivity</string>
     <string name="text_cadastrar_button">Cadastra-se</string>
+    <string name="txt_pergunta">Pergunta 1</string>
+    <string name="radio_resposta">Resposta</string>
+    <string name="btn_reponder">Responder</string>
+    <string name="txt_acertou">Acertou!</string>
+    <string name="txt_errou">Errou!</string>
+    <string name="btn_jogar_novamento">Jogar Novamente</string>
+    <string name="txt_pontos">Pontos</string>
+
+    <string name="msg_login_sucesso">Login com sucesso.</string>
+    <string name="msg_login_falha">Login com falha</string>
+    <string name="msg_digite_email">Digite o email</string>
+    <string name="msg_digite_senha">Digite o email</string>
+    <string name="msg_senha_digitos">Senha não pode ter menos que 6 caracteres.</string>
+    <string name="msg_usuario_criado_sucesso">Usuário criado com sucesso.</string>
+    <string name="msg_usuario_criado_falha">Erro na criação do usuário.</string>
+
+    <string name="pergunta_1">Qual é o nome da primeira versão do Android?</string>
+    <string name="resposta_1_1">Donut</string>
+    <string name="resposta_1_2">Cupcake</string>
+    <string name="resposta_1_3">FroYo</string>
+    <string name="resposta_1_4">KitKat</string>
+
+    <string name="pergunta_2">Qual é o nome do mascote do Android?</string>
+    <string name="resposta_2_1">Bugdroid</string>
+    <string name="resposta_2_2">Android</string>
+    <string name="resposta_2_3">Bug</string>
+    <string name="resposta_2_4">Bugzila</string>
+
+    <string name="pergunta_3">O Android está disponível como código aberto desde?</string>
+    <string name="resposta_3_1">2006</string>
+    <string name="resposta_3_2">2007</string>
+    <string name="resposta_3_3">2008</string>
+    <string name="resposta_3_4">2009</string>
+
+    <string name="pergunta_4">Por qual empresa foi criado o Android?</string>
+    <string name="resposta_4_1">Apple</string>
+    <string name="resposta_4_2">Google</string>
+    <string name="resposta_4_3">Microscoft</string>
+    <string name="resposta_4_4">Facebook</string>
+
+    <string name="pergunta_5">Qual a melhor plataforma mobile?</string>
+    <string name="resposta_5_1">Symbian</string>
+    <string name="resposta_5_2">BlackBerry</string>
+    <string name="resposta_5_3">iOS</string>
+    <string name="resposta_5_4">Android</string>
 
 </resources>

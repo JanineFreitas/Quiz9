@@ -41,11 +41,11 @@ public class PerguntasActivity  extends AppCompatActivity {
     private void addPerguntas(){
         questoes = new ArrayList<Questao>(){
             {
-                add(new Questao("Qual é o nome da primeira versão do Android?", R.id.rbResposta2, getResources().getDrawable(R.mipmap.ic_logo),"Donut", "Cupcake", "FroYo", "KitKat"));
-                add(new Questao("Qual é o nome do mascote do Android", R.id.rbResposta1, getResources().getDrawable(R.mipmap.ic_logo), "Bugdroid", "Android", "Bug", "Bugzila"));
-                add(new Questao("O Android está disponível como código aberto desde?", R.id.rbResposta3,getResources().getDrawable(R.mipmap.ic_logo), "2006", "2007", "2008", "2009"));
-                add(new Questao("Por qual empresa foi criado o Android?", R.id.rbResposta2,getResources().getDrawable(R.mipmap.ic_logo), "Apple", "Google", "Microscoft", "Facebook"));
-                add(new Questao("Qual a melhor plataforma mobile?", R.id.rbResposta4, getResources().getDrawable(R.mipmap.ic_logo),"Symbian", "BlackBerry", "iOS", "Android"));
+                add(new Questao(getString(R.string.pergunta_1), R.id.rbResposta2, getResources().getDrawable(R.mipmap.ic_donut),getString(R.string.resposta_1_1), getString(R.string.resposta_1_2), getString(R.string.resposta_1_3), getString(R.string.resposta_1_4)));
+                add(new Questao(getString(R.string.pergunta_2), R.id.rbResposta1, getResources().getDrawable(R.mipmap.ic_launcher), getString(R.string.resposta_2_1), getString(R.string.resposta_2_2), getString(R.string.resposta_2_3), getString(R.string.resposta_2_4)));
+                add(new Questao(getString(R.string.pergunta_3), R.id.rbResposta3, getResources().getDrawable(R.mipmap.ic_calendario), getString(R.string.resposta_3_1), getString(R.string.resposta_3_2), getString(R.string.resposta_3_3), getString(R.string.resposta_3_4)));
+                add(new Questao(getString(R.string.pergunta_4), R.id.rbResposta2, getResources().getDrawable(R.mipmap.ic_google), getString(R.string.resposta_4_1), getString(R.string.resposta_4_2), getString(R.string.resposta_4_3), getString(R.string.resposta_4_4)));
+                add(new Questao(getString(R.string.pergunta_5), R.id.rbResposta4, getResources().getDrawable(R.mipmap.ic_launcher),getString(R.string.resposta_5_1), getString(R.string.resposta_5_2), getString(R.string.resposta_5_3), getString(R.string.resposta_5_4)));
             }
         };
     }
@@ -76,8 +76,7 @@ public class PerguntasActivity  extends AppCompatActivity {
         if(rgRespostas.getCheckedRadioButtonId() == respostaCerta) {
             intent.putExtra("acertou", true);
             pontos++;
-        }
-        else intent.putExtra("acertou", false);
+        } else intent.putExtra("acertou", false);
         intent.putExtra("pontos", pontos);
         startActivity(intent);
         rb.setChecked(false);

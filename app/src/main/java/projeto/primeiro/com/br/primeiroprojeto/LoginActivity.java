@@ -76,15 +76,15 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(LoginActivity.this, "Login com sucesso.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, getString(R.string.msg_login_sucesso), Toast.LENGTH_SHORT).show();
                                 updateUI(user);
+                                regraLogin();
                             } else {
-                                Toast.makeText(LoginActivity.this, "Login com falha" + task.getException().toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, getString(R.string.msg_login_falha) + task.getException().toString(), Toast.LENGTH_SHORT).show();
                                 updateUI(null);
                             }
                         }
                     });
-            regraLogin();
         }
 
     }
@@ -94,29 +94,25 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void regraLogin(){
-        if(user != null) {
-            Intent intent = new Intent(this, PerguntasActivity.class);
-            startActivity(intent);
-            finish();
-        } else{
-            Toast.makeText(LoginActivity.this, "Falha no Login", Toast.LENGTH_SHORT).show();
-        }
+        Intent intent = new Intent(this, PerguntasActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private Boolean regraEmailESenha(){
         Boolean isValido = true;
         if (TextUtils.isEmpty(loginTextView.getText().toString())) {
-            loginTextView.setError("Digite o email");
+            loginTextView.setError(getString(R.string.msg_digite_email));
             isValido = false;
         }
 
         if (TextUtils.isEmpty(senhaTextView.getText().toString())) {
-            senhaTextView.setError("Digite a senha");
+            senhaTextView.setError(getString(R.string.msg_digite_senha));
             isValido = false;
         }
 
         if (senhaTextView.getText().toString().length() < 6) {
-            senhaTextView.setError("Senha não pode ter menos que 6 caracteres.");
+            senhaTextView.setError(getString(R.string.msg_senha_digitos));
             isValido = false;
         }
         return isValido;
@@ -130,11 +126,11 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(LoginActivity.this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, getString(R.string.msg_usuario_criado_sucesso), Toast.LENGTH_SHORT).show();
                                 user = mAuth.getCurrentUser();
                                 updateUI(user);
                             } else {
-                                Toast.makeText(LoginActivity.this, "Usuário erro na criação", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, getString(R.string.msg_usuario_criado_falha), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

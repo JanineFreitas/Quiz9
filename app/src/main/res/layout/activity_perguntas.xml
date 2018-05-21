@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ic_launcher_background"
     tools:context=".PerguntasActivity">
 
     <TextView
         android:id="@+id/pergunta"
         android:layout_width="246dp"
         android:layout_height="155dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="32dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:text="Quem descobriu o Brasil?"
+        android:text="@string/txt_pergunta"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/black"
@@ -31,7 +32,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginTop="32dp"
-        android:contentDescription="Quiz9"
+        android:contentDescription="@string/app_name"
         android:visibility="visible"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -58,32 +59,36 @@
             android:id="@+id/rbResposta1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="pedro Álvares Cabral"
+            android:text="@string/radio_resposta"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColorLink="@android:color/holo_orange_light"
             android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/rbResposta2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cristóvão Colombo"
+            android:text="@string/radio_resposta"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColorLink="@android:color/holo_orange_light"
             android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/rbResposta3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Donald Trump"
+            android:text="@string/radio_resposta"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColorLink="@android:color/holo_orange_light"
             android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/rbResposta4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="prof. Luiz (LuizTools)"
+            android:text="@string/radio_resposta"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColorLink="@android:color/holo_orange_light"
             android:textSize="15dp" />
 
     </RadioGroup>
@@ -93,15 +98,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:background="@android:color/holo_orange_light"
         android:onClick="btnResponderOnClick"
-        android:text="Responder"
+        android:text="@string/btn_reponder"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:background="@android:color/holo_orange_light"
-        android:textColor="@android:color/black"/>
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>
